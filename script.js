@@ -6,12 +6,12 @@ function updateDateTime() {
   const utcTimeElement = document.querySelector('[data-testid="currentUTCTime"]');
   
   const dayOfWeek = daysOfWeek[currentDate.getUTCDay()];
-  const utcTime = currentDate.toISOString().substr(11, 8); // Extract HH:MM:SS from ISO string
+  const utcTime = currentDate.getTime();
   
-  dayOfWeekElement.innerHTML = `Day of the week: ${dayOfWeek}`;
-  utcTimeElement.innerHTML = `<h4>UTC Time: ${utcTime}</h4>`;
+  dayOfWeekElement.innerHTML = `Current Day of the week: ${dayOfWeek}`;
+  utcTimeElement.innerHTML = `<h4>Current UTC Time: ${utcTime} ms</h4>`;
 }
 
-// Call the function to update the date and time initially and then every second
+// update the date and time initially and then every second
 updateDateTime();
 setInterval(updateDateTime, 1000);
