@@ -8,8 +8,8 @@ function updateDateTime() {
   const dayOfWeek = daysOfWeek[currentDate.getUTCDay()];
   const utcTime = currentDate.getTime();
   
-  dayOfWeekElement.innerHTML = `Current Day of the week: ${dayOfWeek}`;
-  utcTimeElement.innerHTML = `<h4>Current UTC Time: ${utcTime} ms</h4>`;
+  dayOfWeekElement.innerHTML = dayOfWeek;
+  utcTimeElement.innerHTML = utcTime;
 }
 
 // update the date and time initially and then every second
